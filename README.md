@@ -13,7 +13,7 @@ The notebook trains a GNN model to learn molecular features and predict a target
 - `requirements.txt`: Lists all required Python packages to run the notebook.
 - `README.md`: This file, explaining the architecture, setup, and usage.
 
-## 🏗 Model Architecture
+##  Model Architecture
 
 The model is based on a **Message Passing Neural Network (MPNN)** or related GNN variants from `torch_geometric`. The typical architecture includes:
 
@@ -27,6 +27,7 @@ The architecture is modular, allowing easy changes to layers or pooling mechanis
 ##  Dataset
 
 Molecular datasets like QM9 or custom XYZ format data are used. Molecules are parsed and converted into graph structures using tools like ASE or RDKit.
+link for the data set - [@link](https://www.kaggle.com/competitions/molecular-property-prediction-challenge/data)
 
 ##  How to Run
 
