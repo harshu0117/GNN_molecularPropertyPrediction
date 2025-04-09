@@ -14,15 +14,61 @@ The notebook trains a GNN model to learn molecular features and predict a target
 - `README.md`: This file, explaining the architecture, setup, and usage.
 
 ##  Model Architecture
+Sure! Here's your **Model Architecture** section formatted in proper `README.md` Markdown style — ready to paste directly:
 
-The model is based on a **Message Passing Neural Network (MPNN)** or related GNN variants from `torch_geometric`. The typical architecture includes:
+---
 
-- **Input Layer**: Converts molecular graphs into feature representations.
-- **Graph Convolution Layers**: Learns node embeddings via message passing.
-- **Pooling Layer**: Aggregates node embeddings to form a graph-level representation.
-- **Fully Connected Layers**: Maps the pooled representation to property prediction.
+##  Model Architecture
 
-The architecture is modular, allowing easy changes to layers or pooling mechanisms.
+The architecture used in this project is based on **SchNet**, a powerful Graph Neural Network (GNN) tailored for molecular property prediction. It processes molecules as graphs where atoms are nodes and interactions are captured via learned continuous filters based on interatomic distances.
+
+###  Pipeline Overview
+
+```
+[Input Molecules (XYZ via ASE)]
+        ↓
+[Atom & Bond Featurization]
+        ↓
+[Graph Construction (atoms = nodes, edges = distances)]
+        ↓
+[SchNet GNN]
+   ├── Atom Embedding Layer
+   ├── 6 × Interaction Blocks (Message Passing)
+   ├── Continuous Filter Convolutions (cutoff = 10 Å)
+   └── Atom-wise Readout Layer
+        ↓
+[Pooling → Fully Connected Layers]
+        ↓
+[Predicted Molecular Property]
+```
+
+###  Model Configuration
+
+```python
+model = SchNet(
+    hidden_channels=128,
+    num_filters=128,
+    num_interactions=6,
+    cutoff=10.0
+).to(device)
+```
+
+- **hidden_channels**: Dimensionality of hidden atomic representations.
+- **num_filters**: Number of continuous convolution filters.
+- **num_interactions**: Number of interaction (message-passing) layers.
+- **cutoff**: Interatomic distance threshold for considering interactions (in Ångströms).
+
+### Learning Setup
+
+- **Optimizer**: Adam (`lr=1e-3`)
+- **Loss Function**: Mean Squared Error Loss (`MSELoss`)
+- **Device**: Runs on GPU (`cuda`) if available, otherwise CPU.
+
+This setup allows the model to effectively learn from spatial molecular data and generalize well to property prediction tasks like energy, dipole moment, and more.
+
+---
+
+Let me know if you want to add visuals or explanations for datasets used or training logs!
 
 ##  Dataset
 
