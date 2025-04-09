@@ -27,7 +27,7 @@ The architecture is modular, allowing easy changes to layers or pooling mechanis
 ##  Dataset
 
 Molecular datasets like QM9 or custom XYZ format data are used. Molecules are parsed and converted into graph structures using tools like ASE or RDKit.
-link for the data set - [@link](https://www.kaggle.com/competitions/molecular-property-prediction-challenge/data)
+link for the data set - [link](https://www.kaggle.com/competitions/molecular-property-prediction-challenge/data)
 
 ##  How to Run
 
@@ -67,7 +67,7 @@ The model shows promising results in predicting molecular properties. Performanc
 
 ##  Author
 
-- **Harsh** – [@yourGitHub](https://github.com/yourGitHub)
+- **Harsh** – [GitHub](https://github.com/harshu0117)
 
 ---
 
