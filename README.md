@@ -14,11 +14,6 @@ The notebook trains a GNN model to learn molecular features and predict a target
 - `README.md`: This file, explaining the architecture, setup, and usage.
 
 ##  Model Architecture
-Sure! Here's your **Model Architecture** section formatted in proper `README.md` Markdown style — ready to paste directly:
-
----
-
-##  Model Architecture
 
 The architecture used in this project is based on **SchNet**, a powerful Graph Neural Network (GNN) tailored for molecular property prediction. It processes molecules as graphs where atoms are nodes and interactions are captured via learned continuous filters based on interatomic distances.
 
@@ -65,10 +60,6 @@ model = SchNet(
 - **Device**: Runs on GPU (`cuda`) if available, otherwise CPU.
 
 This setup allows the model to effectively learn from spatial molecular data and generalize well to property prediction tasks like energy, dipole moment, and more.
-
----
-
-Let me know if you want to add visuals or explanations for datasets used or training logs!
 
 ##  Dataset
 
